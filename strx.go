@@ -39,7 +39,7 @@ func (s *New) Val() string {
 
 // 获得字符串倒序
 func (s *New) Reverse() *New {
-	runes := []rune(*s)
+	runes := []rune(string(*s))
 	for from, to := 0, len(runes)-1; from < to; from, to = from+1, to-1 {
 		runes[from], runes[to] = runes[to], runes[from]
 	}
