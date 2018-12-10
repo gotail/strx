@@ -27,6 +27,18 @@ func (s *New) Replace(oldStr string, newStr string) *New {
 	return s
 }
 
+// 字符串替换右侧
+func (s *New) TrimRight(trimStr string) *New {
+	*s = New(strings.TrimRight(s.Val(), trimStr))
+	return s
+}
+
+// 字符串替换左侧
+func (s *New) TrimLeft(trimStr string) *New {
+	*s = New(strings.TrimLeft(s.Val(), trimStr))
+	return s
+}
+
 // 字符串替换，将所有的oldStr替换为newStr
 func (s *New) ReplaceM(newStr string, oldStr ...string) *New {
 	*s = New(ReplaceM(s.Val(), newStr, oldStr...))

@@ -4,6 +4,14 @@ import (
 	"testing"
 )
 
+func TestNew_TrimRight(t *testing.T) {
+
+	var testStr = "世界和平fj"
+	str := New(testStr)
+	resultStr := str.TrimRight("fj").Val()
+	t.Log(resultStr)
+}
+
 func TestNew_Between(t *testing.T) {
 	var testStr = "今天天气真好啊，太阳当空照耀。"
 	str := New(testStr)
