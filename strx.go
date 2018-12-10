@@ -13,7 +13,7 @@ func (s *New) Clean(cleanStr ...string) *New {
 
 // 字符串替换
 func (s *New) Replace(oldStr string, newStr string) *New {
-	*s = New(strings.Replace(string(*s), oldStr, newStr, -1))
+	*s = New(strings.Replace(s.Val(), oldStr, newStr, -1))
 	return s
 }
 
@@ -27,7 +27,7 @@ func (s *New) ReplaceM(newStr string, oldStr ...string) *New {
 
 // 字符串添加
 func (s *New) Append(appendStr string) *New {
-	newStr := string(*s) + appendStr
+	newStr := s.Val() + appendStr
 	*s = New(newStr)
 	return s
 }
@@ -39,7 +39,7 @@ func (s *New) Val() string {
 
 // 获得字符串倒序
 func (s *New) Reverse() *New {
-	runes := []rune(string(*s))
+	runes := []rune(s.Val())
 	for from, to := 0, len(runes)-1; from < to; from, to = from+1, to-1 {
 		runes[from], runes[to] = runes[to], runes[from]
 	}
