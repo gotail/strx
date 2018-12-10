@@ -4,41 +4,42 @@ import (
 	"testing"
 )
 
-func TestNew_BoolToString(t *testing.T) {
-	str := New("")
-	t.Log(str.BoolToString(false).Val())
+func TestNew_Between(t *testing.T) {
+	var testStr = "今天天气真好啊，太阳当空照耀。"
+	str := New(testStr)
+	resultStr := str.Between("今天", "耀").Val()
+	t.Log(resultStr)
 }
 
 func TestStr_Clean(t *testing.T) {
-	var x = "abbcde ffsa*b*34"
-	str := New(x)
-	clean := str.Clean(" ", "*", "bb")
-	t.Log(clean.Val())
+	var testStr = "abbcde ffsa*b*34"
+	str := New(testStr)
+	resultStr := str.Clean(" ", "*", "bb").Val()
+	t.Log(resultStr)
 }
 
 func TestStr_ReplaceM(t *testing.T) {
-	var x = "a|d*sdf"
+	var testStr = "a|d*sdf"
 
-	str := New(x)
+	str := New(testStr)
 	m := str.ReplaceM("rrr", "|", "*")
 	t.Log(m.Val())
 }
 
 func TestStr_Append(t *testing.T) {
-	var x = "asdf"
+	var testStr = "asdf"
 
-	str := New(x)
+	str := New(testStr)
 
 	s := str.Append(" | sdf").Append(" - fff").Val()
 	t.Log(s)
 }
 
 func TestStr_Replace(t *testing.T) {
-	var x = "777-${a}-${b}"
-	y := New(x)
-	splite := y.Replace("${a}", "999").Replace("${b}", "234").Val()
-
-	t.Log(splite)
+	var testStr = "777-${a}-${b}"
+	y := New(testStr)
+	resultStr := y.Replace("${a}", "999").Replace("${b}", "234").Val()
+	t.Log(resultStr)
 }
 
 func TestStr_Reverse(t *testing.T) {
