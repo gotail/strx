@@ -6,6 +6,18 @@ import (
 
 type New string
 
+// bool to string
+// return "true" or "false"
+func (s *New) BoolToString(source bool) *New {
+	if source {
+		*s = New("true")
+	} else {
+		*s = New("false")
+	}
+
+	return s
+}
+
 // 字符串清除
 func (s *New) Clean(cleanStr ...string) *New {
 	return s.ReplaceM("", cleanStr...)

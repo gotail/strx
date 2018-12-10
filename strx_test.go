@@ -4,6 +4,11 @@ import (
 	"testing"
 )
 
+func TestNew_BoolToString(t *testing.T) {
+	str := New("")
+	t.Log(str.BoolToString(false).Val())
+}
+
 func TestStr_Clean(t *testing.T) {
 	var x = "abbcde ffsa*b*34"
 	str := New(x)
@@ -37,7 +42,7 @@ func TestStr_Replace(t *testing.T) {
 }
 
 func TestStr_Reverse(t *testing.T) {
-	y := New("abcd")
+	y := New("中国")
 	reverse := y.Reverse().Val()
 	t.Log(reverse)
 }
