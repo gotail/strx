@@ -1,8 +1,16 @@
 package strx
 
 import (
+	"fmt"
 	"testing"
 )
+
+func TestIsEmpty(t *testing.T) {
+	var testStr = "   "
+	r := IsEmpty(testStr)
+	r2 := IsNotEmpty(testStr)
+	fmt.Println(r, r2)
+}
 
 func TestNew_TrimRight(t *testing.T) {
 

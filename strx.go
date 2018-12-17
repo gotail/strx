@@ -16,6 +16,19 @@ func BoolToString(source bool) string {
 	}
 }
 
+// 判断是否是空，是空返回true，不是空返回false
+func IsEmpty(source string) bool {
+	if len(strings.Trim(source, "")) == 0 {
+		return true
+	}
+	return false
+}
+
+// 判断是否不是空，是空返回false，不是空返回true
+func IsNotEmpty(source string) bool {
+	return !IsEmpty(source)
+}
+
 // 字符串清除
 func (s *New) Clean(cleanStr ...string) *New {
 	return s.ReplaceM("", cleanStr...)
