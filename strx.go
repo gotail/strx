@@ -37,7 +37,7 @@ func (s *New) NoConsecutiveSpaces() *New {
 		b = strings.Replace(a, "  ", " ", -1)
 
 		if a == b {
-			*s = New(a)
+			*s = New(strings.Trim(a, " "))
 			return s
 		}
 

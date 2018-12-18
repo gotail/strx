@@ -9,7 +9,7 @@ func TestNew_NoConsecutiveSpaces(t *testing.T) {
 	var testStr = " a   bcde   fgh      ijkl   mn"
 
 	s := New(testStr)
-	val := s.NoConsecutiveSpaces().Trim(" ").Val()
+	val := s.NoConsecutiveSpaces().Val()
 	fmt.Println(val)
 }
 
