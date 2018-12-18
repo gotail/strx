@@ -5,6 +5,14 @@ import (
 	"testing"
 )
 
+func TestNew_NoConsecutiveSpaces(t *testing.T) {
+	var testStr = " a   bcde   fgh      ijkl   mn"
+
+	s := New(testStr)
+	val := s.NoConsecutiveSpaces().Trim(" ").Val()
+	fmt.Println(val)
+}
+
 func TestIsEmpty(t *testing.T) {
 	var testStr = "   "
 	r := IsEmpty(testStr)

@@ -29,6 +29,23 @@ func IsNotEmpty(source string) bool {
 	return !IsEmpty(source)
 }
 
+// 没有连续的空格
+func (s *New) NoConsecutiveSpaces() *New {
+	var a, b string
+	a = string(*s)
+	for {
+		b = strings.Replace(a, "  ", " ", -1)
+
+		if a == b {
+			*s = New(a)
+			return s
+		}
+
+		a = b
+	}
+
+}
+
 // 字符串清除
 func (s *New) Clean(cleanStr ...string) *New {
 	return s.ReplaceM("", cleanStr...)
