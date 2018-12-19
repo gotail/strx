@@ -18,7 +18,7 @@ func BoolToString(source bool) string {
 
 // 判断是否是空，是空返回true，不是空返回false
 func IsEmpty(source string) bool {
-	if len(strings.Trim(source, "")) == 0 {
+	if strings.Trim(source, " ") == "" {
 		return true
 	}
 	return false
