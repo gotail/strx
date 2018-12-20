@@ -13,19 +13,14 @@ type str string
 
 // 没有连续的空格
 func (s *str) NoConsecutiveSpaces() *str {
-	var a, b string
-	a = string(*s)
+	a := string(*s)
 	for {
-		b = strings.Replace(a, "  ", " ", -1)
-
-		if a == b {
+		a = strings.Replace(a, "  ", " ", -1)
+		if !strings.Contains(a, "  ") {
 			s = New(strings.Trim(a, " "))
 			return s
 		}
-
-		a = b
 	}
-
 }
 
 // 字符串清除
