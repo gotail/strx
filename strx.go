@@ -13,10 +13,11 @@ type str string
 
 // 没有连续的空格
 func (s *str) NoConsecutiveSpaces() *str {
+	cs := "  "
 	a := string(*s)
 	for {
-		a = strings.Replace(a, "  ", " ", -1)
-		if !strings.Contains(a, "  ") {
+		a = strings.Replace(a, cs, " ", -1)
+		if !strings.Contains(a, cs) {
 			s = New(strings.Trim(a, " "))
 			return s
 		}
@@ -75,6 +76,17 @@ func (s *str) Append(appendStr string) *str {
 // 获得string
 func (s *str) Val() string {
 	return string(*s)
+}
+
+const primeRK = 16777619
+
+func (s *str) HashCode() uint32 {
+	strTemp := *s
+	hash := uint32(0)
+	for i := 0; i < len(strTemp); i++ {
+		hash = hash*primeRK + uint32(strTemp[i])
+	}
+	return hash
 }
 
 // 获得字符串倒序

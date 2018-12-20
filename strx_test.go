@@ -5,6 +5,11 @@ import (
 	"testing"
 )
 
+func TestStr_HashCode(t *testing.T) {
+	var testStr = "abcd"
+	code := New(testStr).HashCode()
+	t.Log(code)
+}
 func TestNew_NoConsecutiveSpaces(t *testing.T) {
 	var testStr = " a   bcde   fgh      ijkl   mn"
 
