@@ -8,9 +8,8 @@ import (
 func TestNew_NoConsecutiveSpaces(t *testing.T) {
 	var testStr = " a   bcde   fgh      ijkl   mn"
 
-	s := New(testStr)
-	val := s.NoConsecutiveSpaces().Val()
-	fmt.Println(val)
+	s := New(testStr).NoConsecutiveSpaces().Val()
+	fmt.Println(s)
 }
 
 func TestIsEmpty(t *testing.T) {
@@ -21,7 +20,6 @@ func TestIsEmpty(t *testing.T) {
 }
 
 func TestNew_TrimRight(t *testing.T) {
-
 	var testStr = "世界和平fj"
 	str := New(testStr)
 	resultStr := str.TrimRight("fj").Val()
@@ -33,6 +31,11 @@ func TestNew_Between(t *testing.T) {
 	str := New(testStr)
 	resultStr := str.Between("今天", "耀").Val()
 	t.Log(resultStr)
+}
+
+func TestBetween(t *testing.T) {
+	x := New("a b").Val()
+	fmt.Println(x)
 }
 
 func TestStr_Clean(t *testing.T) {
