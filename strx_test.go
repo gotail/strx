@@ -34,8 +34,16 @@ func TestNew_Between(t *testing.T) {
 }
 
 func TestBetween(t *testing.T) {
-	x := New("a b").Val()
-	fmt.Println(x)
+	var newStr string = New(" 这*里|||有人民yyyy币         $yy#{money}   ..").
+		NoConsecutiveSpaces().
+		Trim(" ").
+		Clean("*", "|", "yy").
+		Replace("$", "￥").
+		Replace("#{money}", "250").
+		TrimRight(".").
+		Append("元").
+		Val()
+	fmt.Println(newStr)
 }
 
 func TestStr_Clean(t *testing.T) {
