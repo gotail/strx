@@ -87,3 +87,15 @@ func TestStr_Reverse(t *testing.T) {
 	reverse := y.Reverse().Val()
 	t.Log(reverse)
 }
+
+func TestStr_ToLower(t *testing.T) {
+	y := New("Hello,world!")
+	lower := y.ToLower().Val()
+	t.Log(lower)
+}
+
+func TestStr_ToUpper(t *testing.T) {
+	y := New("Hello,world!")
+	upper := y.ToUpper().Val()
+	t.Log(upper)
+}
