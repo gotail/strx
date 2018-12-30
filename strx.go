@@ -98,3 +98,15 @@ func (s *str) Reverse() *str {
 	s = New(string(runes))
 	return s
 }
+
+// 英文字符串全部置为大写
+func (s *str) ToUpper() *str {
+	strNew := strings.ToUpper(s.Val())
+	return New(strNew)
+}
+
+//英文字母全部置为小写
+func (s *str) ToLower() *str {
+	strNew := strings.ToLower(s.Val())
+	return New(strNew)
+}
