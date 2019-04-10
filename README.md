@@ -29,3 +29,7 @@ var newStr string = New(" 这*里|||有人民yyyy币         $yy#{money}   ..").
 ```
 
 若你对这个小工具感兴趣，欢迎加入。
+
+## LICENSE
+
+anti-996 LICENSE
